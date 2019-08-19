@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('test');
-});
+Route::get('/',  'PostController@index');
+Route::get('post/','PostController@index')->name('post.index');
+Route::get('post/create','PostController@create')->name('post.create');
+Route::post('post/','PostController@store')->name('post.store');
