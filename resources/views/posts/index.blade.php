@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layout' , ['title' => 'Главная стараница'])
     @section('content')
 
         @if(isset($_GET['search']))
@@ -16,7 +16,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header"><h2>{{ $post->short_title }}</h2></div>
-                    <div class="card-body"> {{ $post->descr }}
+                    <div class="card-body">
                         <div class="card-img" style="background-image: url({{$post->img ?? asset('img/stupa.jpg')}})"></div>
                         <div class="card-author">{{$post->name}}</div>
                         <a href="{{ route('post.show', ['id' => $post->post_id]) }}" class="btn btn-outline-primary">Посмотреть пост</a>
